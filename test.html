@@ -36,7 +36,7 @@
 
             \FUNCTION{heapsort}{$A$}
                 \STATE $len⬅A.length$
-                \FOR{$i⬅len/2-1$ \TO $0$}  
+                \FOR{$i⬅ \lfloor len/2-1 \rfloor $ \TO $0$}  
                     \STATE $maxheapify(A,i,len-1)$
                 \ENDFOR
                 \FOR{$i⬅len-1$ \TO $1$}  
