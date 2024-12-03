@@ -20,7 +20,7 @@
 
             \FUNCTION{maxheapify}{$A,i,j$}
                 \STATE $father⬅i,child⬅father*2+1$
-                \WHILE{$child < j$}
+                \WHILE{$child <= j$}
                     \IF{$child+1 <= j \&\& A[child+1]>A[child]$}
                         \STATE $child⬅child+1$
                     \ENDIF
