@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"
+        integrity="sha512-EKW5YvKU3hpyyOcN6jQnAxO/L8gts+YdYV6Yymtl8pk9YlYFtqJgihORuRoBXK8/cOIlappdU6Ms8KdK6yBCgA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js">
+        
+    </script>
+</head>
+<body>
+        <pre id="bucketsort" class="pseudocode">
+            \begin{algorithm}
+            \begin{algorithmic}
+            \FUNCTION{bucketsort}{$A$}
+                \STATE $epoch⬅0,max⬅MAX(A),temp⬅max\hspace{10px}//MAX()求数组中最大元素$
+                \WHILE{$temp > 0$}
+                    \STATE $temp⬅ \lfloor temp/10 \rfloor$
+                    \STATE $epoch⬅epoch+1$
+                \ENDWHILE
+
+                \For{$i=0$ to $epoch$}
+                    \STATE $B⬅[[\hspace{5px}],...,[\hspace{5px}]]\hspace{10px}//定义10个二维数组$
+                    \For{$j=0$ to $A.length$}
+                        \STATE$index⬅ \lfloor A[j]/(10^i) \rfloor \%10 $
+                        \STATE$B[index].push(A[j])$
+                    \EndFor
+                    \STATE$A=FLAT(B)\hspace{10px}//将二位数组展开成一维数组$
+                \EndFor
+
+                \Return A
+            \ENDFUNCTION
+            \end{algorithmic}  
+            \end{algorithm}
+        </pre>
+        <script>    
+            pseudocode.renderElement(document.getElementById("bucketsort"));
+        </script>
+</script>
+</body>
+</html>
